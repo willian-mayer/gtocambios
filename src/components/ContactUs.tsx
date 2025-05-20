@@ -3,105 +3,139 @@
 type ContactItem = {
   title: string;
   description: string;
-  url: string;
+  url?: string;
+  icon?: React.ReactNode;
 };
 
 type ContactUsProps = {
-  heading: string;
-  subheading: string;
-  intro: string;
   contacts: ContactItem[];
 };
 
-export default function ContactUs({ heading, subheading, intro, contacts }: ContactUsProps) {
+export default function ContactUs({ contacts }: ContactUsProps) {
   return (
-    <section id="contato" className="bg-white dark:bg-gray-90 md:mx-24 lg:mx-48 xl:mx-72">
-      <div className="container px-6 py-12 mx-auto">
-        <div>
-          <p className="font-medium text-blue-500 dark:text-blue-400">{subheading}</p>
-          <h1 className="mt-2 text-2xl font-semibold text-gray-800 md:text-3xl dark:text-white">{heading}</h1>
-          <p className="mt-3 text-gray-500 dark:text-gray-400">{intro}</p>
-        </div>
-
-        <div className="grid grid-cols-1 gap-12 mt-10 lg:grid-cols-2">
-          {/* Contact Info Section */}
-          <div className="grid grid-cols-1 gap-12 md:grid-cols-2">
-            {contacts.map((contact, index) => (
-              <div key={index}>
-                <span className="inline-block p-3 text-blue-500 rounded-full bg-blue-100/80 dark:bg-gray-800">
-                  {/* Placeholder icon - puedes cambiar por algo dinámico si lo deseas */}
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    strokeWidth={1.5}
-                    stroke="currentColor"
-                    className="w-5 h-5"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"
-                    />
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"
-                    />
-                  </svg>
-                </span>
-                <h2 className="mt-4 text-base font-medium text-gray-800 dark:text-white">{contact.title}</h2>
-                <p className="mt-2 text-sm text-gray-500 dark:text-gray-400">{contact.description}</p>
-                <p className="mt-2 text-sm text-blue-500 dark:text-blue-400">{contact.url}</p>
-              </div>
-            ))}
+    <section id="contato" className="mb-10 pt-10">
+      <div className="container mx-auto px-6 md:px-12">
+        <div className="flex flex-col lg:flex-row gap-8 rounded-lg border border-gray-300 bg-white/80 p-6 md:p-12 backdrop-blur-lg shadow-md">
+          
+          {/* Mapa */}
+          <div className="w-full lg:w-1/2 h-[300px] lg:h-auto">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3599.5482925351603!2d-49.171867899999995!3d-25.5534192!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94dcf79b56f498cd%3A0x444ea607a705c007!2sGTO%20C%C3%A2mbios%20Autom%C3%A1ticos%20-%20Transmiss%C3%B5es%20Autom%C3%A1ticas%20em%20Curitiba%20e%20em%20S%C3%A3o%20jos%C3%A9%20dos%20Pinhais!5e0!3m2!1spt-BR!2sbr!4v1747761550298!5m2!1spt-BR!2sbr"
+              width="100%"
+              height="100%"
+              className="rounded-md border-0 w-full h-full"
+              allowFullScreen
+              loading="lazy"
+            />
           </div>
 
-          {/* Contact Form Section */}
-          <div className="p-4 py-6 rounded-lg bg-gray-50 dark:bg-gray-800 md:p-8">
-            <form>
-              <div className="-mx-2 md:items-center md:flex">
-                <div className="flex-1 px-2">
-                  <label className="block mb-2 text-sm text-gray-600 dark:text-gray-200">Nome</label>
-                  <input
-                    type="text"
-                    placeholder="John"
-                    className="block w-full px-5 py-2.5 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-lg dark:placeholder-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-700 focus:border-blue-400 dark:focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40"
-                  />
-                </div>
-
-                <div className="flex-1 px-2 mt-4 md:mt-0">
-                  <label className="block mb-2 text-sm text-gray-600 dark:text-gray-200">Sobrenome</label>
-                  <input
-                    type="text"
-                    placeholder="Doe"
-                    className="block w-full px-5 py-2.5 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-lg dark:placeholder-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-700 focus:border-blue-400 dark:focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40"
-                  />
-                </div>
+          {/* Formulario + Contacto */}
+          <div className="w-full lg:w-1/2">
+            {/* Formulario */}
+            <form className="mb-8">
+              <div className="relative mb-6">
+                <input
+                  type="text"
+                  className="peer w-full rounded border-2 bg-transparent px-3 py-2 leading-6 outline-none transition-all focus:border-blue-500"
+                  id="name"
+                  placeholder=" "
+                />
+                <label
+                  htmlFor="name"
+                  className="absolute left-3 top-2 text-gray-500 transition-all peer-placeholder-shown:top-2.5 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:top-[-0.7rem] peer-focus:text-sm peer-focus:text-blue-600"
+                >
+                  Name
+                </label>
               </div>
 
-              <div className="mt-4">
-                <label className="block mb-2 text-sm text-gray-600 dark:text-gray-200">E-mail</label>
+              <div className="relative mb-6">
                 <input
                   type="email"
-                  placeholder="johndoe@example.com"
-                  className="block w-full px-5 py-2.5 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-lg dark:placeholder-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-700 focus:border-blue-400 dark:focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40"
+                  className="peer w-full rounded border-2 bg-transparent px-3 py-2 leading-6 outline-none transition-all focus:border-blue-500"
+                  id="email"
+                  placeholder=" "
                 />
+                <label
+                  htmlFor="email"
+                  className="absolute left-3 top-2 text-gray-500 transition-all peer-placeholder-shown:top-2.5 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:top-[-0.7rem] peer-focus:text-sm peer-focus:text-blue-600"
+                >
+                  Email
+                </label>
               </div>
 
-              <div className="w-full mt-4">
-                <label className="block mb-2 text-sm text-gray-600 dark:text-gray-200">Mensagem</label>
+              <div className="relative mb-6">
                 <textarea
-                  className="block w-full h-32 px-5 py-2.5 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-lg md:h-56 dark:placeholder-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-700 focus:border-blue-400 dark:focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40"
-                  placeholder="Mensagem"
-                ></textarea>
+                  rows={4}
+                  className="peer w-full rounded border-2 bg-transparent px-3 py-2 leading-6 outline-none transition-all focus:border-blue-500"
+                  id="message"
+                  placeholder=" "
+                />
+                <label
+                  htmlFor="message"
+                  className="absolute left-3 top-2 text-gray-500 transition-all peer-placeholder-shown:top-2.5 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:top-[-0.7rem] peer-focus:text-sm peer-focus:text-blue-600"
+                >
+                  Message
+                </label>
               </div>
 
-              <button className="w-full px-6 py-3 mt-4 text-sm font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-blue-500 rounded-lg hover:bg-blue-400 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-50">
-                Enviar form
+              <div className="mb-6 flex items-center space-x-2">
+                <input
+                  type="checkbox"
+                  id="copy"
+                  className="h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500"
+                  defaultChecked
+                />
+                <label htmlFor="copy" className="text-sm text-gray-600">
+                  Send me a copy of this message
+                </label>
+              </div>
+
+              <button
+                type="submit"
+                className="w-full rounded bg-blue-500 px-6 py-3 text-white transition hover:bg-blue-600"
+              >
+                Send
               </button>
             </form>
+
+            {/* Contact Info */}
+            <div className="flex flex-wrap">
+              {contacts.map((contact, i) => (
+                <div key={i} className="w-full md:w-1/2 p-2">
+                  <div className="flex items-start">
+                    <div className="shrink-0">
+                      <div className="inline-block rounded-md bg-blue-100 p-4 text-blue-600">
+                        {contact.icon || (
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            strokeWidth={2}
+                            stroke="currentColor"
+                            className="h-6 w-6"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              d="M15 9h3.75M15 12h3.75M15 15h3.75M4.5 19.5h15a2.25 2.25 0 002.25-2.25V6.75A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25v10.5A2.25 2.25 0 004.5 19.5z"
+                            />
+                          </svg>
+                        )}
+                      </div>
+                    </div>
+                    <div className="ml-4">
+                      <p className="mb-1 font-bold">{contact.title}</p>
+                      <p className="text-sm text-gray-600">{contact.description}</p>
+                      {contact.url && (
+                        <p className="text-sm text-blue-500">{contact.url}</p>
+                      )}
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
+
         </div>
       </div>
     </section>
