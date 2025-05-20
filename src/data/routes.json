@@ -1,0 +1,6 @@
+[
+    { "name": "Serviços", "path": "#servicos" },
+    { "name": "Sobre Nós", "path": "#about-us" },
+    { "name": "Contato", "path": "#contato" }
+  ]
+  
