@@ -1,27 +1,27 @@
 {
-  "heading": "Chat to our friendly team",
-  "subheading": "Contact us",
-  "intro": "We’d love to hear from you. Please fill out this form or shoot us an email.",
+  "heading": "Converse com nossa equipe amigável",
+  "subheading": "Contate-nos",
+  "intro": "Adoraríamos ouvir você. Por favor, preencha este formulário ou envie-nos um e-mail.",
   "contacts": [
     {
       "title": "Email",
-      "description": "Our friendly team is here to help.",
-      "url": "hello@merakiui.com"
+      "description": "Nossa equipe amigável está aqui para ajudar.",
+      "url": "e-mail"
     },
     {
-      "title": "Live chat",
-      "description": "Our friendly team is here to help.",
-      "url": "Start new chat"
+      "title": "Nosso whatsapp",
+      "description": "Nossa equipe amigável está aqui para ajudar.",
+      "url": "Whatsapp"
     },
     {
-      "title": "Office",
-      "description": "Come say hello at our office HQ.",
-      "url": "100 Smith Street Collingwood VIC 3066 AU"
+      "title": "Escritório",
+      "description": "Venha nos visitar em nossa sede.",
+      "url": "Endereço"
     },
     {
-      "title": "Phone",
-      "description": "Mon-Fri from 8am to 5pm.",
-      "url": "+1 (555) 000-0000"
+      "title": "Telefone",
+      "description": "Segunda a sexta, das 8h às 17h.",
+      "url": "+55 41 ----- ----"
     }
   ]
 }

@@ -10,7 +10,7 @@ type AboutUsProps = {
 
 export default function AboutUs({ title, description, imageUrl }: AboutUsProps) {
   return (
-    <section className="py-16 md:py-0 md:h-screen flex items-center bg-white">
+    <section id="about-us" className="py-16 md:py-0 md:h-screen flex items-center bg-white">
       <div className="w-full max-w-7xl px-4 md:px-5 mx-auto">
         <div className="grid lg:grid-cols-2 grid-cols-1 gap-8 items-center">
           {/* Text Content */}

@@ -15,7 +15,7 @@ type ContactUsProps = {
 
 export default function ContactUs({ heading, subheading, intro, contacts }: ContactUsProps) {
   return (
-    <section className="bg-white dark:bg-gray-900">
+    <section id="contato" className="bg-white dark:bg-gray-90 md:mx-24 lg:mx-48 xl:mx-72">
       <div className="container px-6 py-12 mx-auto">
         <div>
           <p className="font-medium text-blue-500 dark:text-blue-400">{subheading}</p>
@@ -62,7 +62,7 @@ export default function ContactUs({ heading, subheading, intro, contacts }: Cont
             <form>
               <div className="-mx-2 md:items-center md:flex">
                 <div className="flex-1 px-2">
-                  <label className="block mb-2 text-sm text-gray-600 dark:text-gray-200">First Name</label>
+                  <label className="block mb-2 text-sm text-gray-600 dark:text-gray-200">Nome</label>
                   <input
                     type="text"
                     placeholder="John"
@@ -71,7 +71,7 @@ export default function ContactUs({ heading, subheading, intro, contacts }: Cont
                 </div>
 
                 <div className="flex-1 px-2 mt-4 md:mt-0">
-                  <label className="block mb-2 text-sm text-gray-600 dark:text-gray-200">Last Name</label>
+                  <label className="block mb-2 text-sm text-gray-600 dark:text-gray-200">Sobrenome</label>
                   <input
                     type="text"
                     placeholder="Doe"
@@ -81,7 +81,7 @@ export default function ContactUs({ heading, subheading, intro, contacts }: Cont
               </div>
 
               <div className="mt-4">
-                <label className="block mb-2 text-sm text-gray-600 dark:text-gray-200">Email address</label>
+                <label className="block mb-2 text-sm text-gray-600 dark:text-gray-200">E-mail</label>
                 <input
                   type="email"
                   placeholder="johndoe@example.com"
@@ -90,15 +90,15 @@ export default function ContactUs({ heading, subheading, intro, contacts }: Cont
               </div>
 
               <div className="w-full mt-4">
-                <label className="block mb-2 text-sm text-gray-600 dark:text-gray-200">Message</label>
+                <label className="block mb-2 text-sm text-gray-600 dark:text-gray-200">Mensagem</label>
                 <textarea
                   className="block w-full h-32 px-5 py-2.5 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-lg md:h-56 dark:placeholder-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-700 focus:border-blue-400 dark:focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40"
-                  placeholder="Message"
+                  placeholder="Mensagem"
                 ></textarea>
               </div>
 
               <button className="w-full px-6 py-3 mt-4 text-sm font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-blue-500 rounded-lg hover:bg-blue-400 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-50">
-                Send message
+                Enviar form
               </button>
             </form>
           </div>

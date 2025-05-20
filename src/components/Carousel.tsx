@@ -34,7 +34,7 @@ export default function Carousel({ items }: CarouselProps) {
   };
 
   return (
-    <div className="w-full max-w-5xl mx-auto px-4">
+    <div id="servicos" className="w-full max-w-5xl mx-auto px-4 ">
       <h1 className="text-center text-4xl font-bold mb-6">Nossos serviços</h1>
 
       <CarouselLib
@@ -50,8 +50,8 @@ export default function Carousel({ items }: CarouselProps) {
         itemClass="px-2"
       >
         {items.map((item, index) => (
-          <div key={index} className="bg-white rounded-lg overflow-hidden shadow">
-            <div className="relative h-80 w-full">
+          <div key={index} className="bg-white rounded-lg overflow-hidden shadow ">
+            <div className="relative h-80 w-full ">
               <Image
                 src={item.image}
                 alt={item.title}

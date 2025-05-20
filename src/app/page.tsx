@@ -38,7 +38,7 @@ export default function Home() {
           intro={contactData.intro}
           contacts={contactData.contacts}
         />
-        <Footer />
+        <Footer links={routesJson}/>
       </section>
     </div>
   );
