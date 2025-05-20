@@ -56,7 +56,7 @@ export default function Hero({
       </div>
 
       {/* Contenido */}
-      <div className="relative z-10 flex flex-col justify-center items-center text-center px-4 h-full">
+      <div className="relative z-10 flex flex-col justify-center items-center text-center px-4 h-full mx-4 sm:mx-8 md:mx-24 lg:mx-48 xl:mx-72 gap-10">
         <h1
           className={`text-4xl md:text-6xl font-bold mb-4 transition-all duration-700 ease-out transform ${
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'
