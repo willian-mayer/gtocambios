@@ -32,12 +32,8 @@ export default function Home() {
         />
       </section>
       <section className="snap-start">
-        <ContactUs
-          heading={contactData.heading}
-          subheading={contactData.subheading}
-          intro={contactData.intro}
-          contacts={contactData.contacts}
-        />
+<ContactUs contacts={contactData.contacts} />
+
         <Footer links={routesJson}/>
       </section>
     </div>
