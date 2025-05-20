@@ -1,7 +1,7 @@
 // components/Footer.tsx
 import Image from "next/image";
 import { Route } from "@/types/routes";
-
+import Link from "next/link";
 type FooterProps = {
   links: Route[];
 };
@@ -13,11 +13,14 @@ const Footer = ({ links }: FooterProps) => {
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6">
           {/* Logo y copyright */}
           <div className="flex flex-col sm:flex-row sm:items-center gap-4">
-            <a href="/" className="flex items-center space-x-3">
-              <Image src="/logo.jpg" alt="Logo" width={80} height={80} className="h-20 w-auto" />
-            </a>
+            <Link href="/" className="text-blue-500 hover:underline">
+               <Image src="/logo.jpg" alt="Logo" width={80} height={80} className="h-20 w-auto" />
+</Link>
+
             <span className="text-sm text-gray-400 sm:ml-4">
-              © {new Date().getFullYear()} <a href="/" className="hover:underline">GTO Cambios</a>. Todos os direitos reservados.
+              © {new Date().getFullYear()} <Link href="/" className="hover:underline">
+  GTO Cambios
+</Link>. Todos os direitos reservados.
             </span>
           </div>
 
