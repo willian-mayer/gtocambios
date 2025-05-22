@@ -1,0 +1,12 @@
+[
+  {
+    "name": "Instagram",
+    "icon": "/media/instagram.svg",
+    "url": "https://www.instagram.com/gtocambiosautomaticos/"
+  },
+  {
+    "name": "Facebook",
+    "icon": "/media/facebook.svg",
+    "url": "https://www.facebook.com/gto.oficina/"
+  }
+]
