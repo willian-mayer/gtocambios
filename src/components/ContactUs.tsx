@@ -1,5 +1,7 @@
 "use client";
 
+import { useState } from "react";
+
 type ContactItem = {
   title: string;
   description: string;
@@ -12,6 +14,8 @@ type ContactUsProps = {
 };
 
 export default function ContactUs({ contacts }: ContactUsProps) {
+  const [status, setStatus] = useState<"idle" | "success" | "error">("idle");
+
   return (
     <section id="contato" className="mb-10 pt-10">
       <div className="container mx-auto px-6 md:px-12">
@@ -19,7 +23,7 @@ export default function ContactUs({ contacts }: ContactUsProps) {
           {/* Mapa */}
           <div className="w-full lg:w-1/2 h-[300px] lg:h-auto">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3599.5482925351603!2d-49.171867899999995!3d-25.5534192!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94dcf79b56f498cd%3A0x444ea607a705c007!2sGTO%20C%C3%A2mbios%20Autom%C3%A1ticos%20-%20Transmiss%C3%B5es%20Autom%C3%A1ticas%20em%20Curitiba%20e%20em%20S%C3%A3o%20jos%C3%A9%20dos%20Pinhais!5e0!3m2!1spt-BR!2sbr!4v1747761550298!5m2!1spt-BR!2sbr"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3599.5482925351603!2d-49.171867899999995!3d-25.5534192!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94dcf79b56f498cd%3A0x444ea607a705c007!2sGTO%20C%C3%A2mbios%20Autom%C3%A1ticos!5e0!3m2!1spt-BR!2sbr!4v1747761550298!5m2!1spt-BR!2sbr"
               width="100%"
               height="100%"
               className="rounded-md border-0 w-full h-full"
@@ -31,57 +35,101 @@ export default function ContactUs({ contacts }: ContactUsProps) {
           {/* Formulario + Contacto */}
           <div className="w-full lg:w-1/2">
             {/* Formulario */}
-            <form className="mb-8">
+            <form
+              className="mb-8"
+              onSubmit={async (e) => {
+                e.preventDefault();
+                const form = e.currentTarget;
+                const formData = new FormData(form);
+
+                try {
+                  const res = await fetch("https://formsubmit.co/ajax/gto.oficina@hotmail.com", {
+                    method: "POST",
+                    headers: {
+                      Accept: "application/json",
+                    },
+                    body: formData,
+                  });
+
+                  if (res.ok) {
+                    setStatus("success");
+                    form.reset();
+                  } else {
+                    setStatus("error");
+                  }
+                } catch {
+                  setStatus("error");
+                }
+              }}
+            >
               <div className="relative mb-6">
                 <input
                   type="text"
+                  name="name"
                   className="peer w-full rounded border-2 border-gray-500 bg-transparent px-3 py-2 leading-6 outline-none transition-all focus:border-blue-500"
                   id="name"
                   placeholder=" "
+                  required
                 />
                 <label
                   htmlFor="name"
                   className="absolute left-3 top-2 text-gray-500 transition-all peer-placeholder-shown:top-2.5 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:top-[-1.2rem] peer-focus:text-sm peer-focus:text-blue-600"
                 >
-                  Name
+                  Nome
                 </label>
               </div>
 
               <div className="relative mb-6">
                 <input
                   type="email"
+                  name="email"
                   className="peer w-full rounded border-2 border-gray-500 bg-transparent px-3 py-2 leading-6 outline-none transition-all focus:border-blue-500"
                   id="email"
                   placeholder=" "
+                  required
                 />
                 <label
                   htmlFor="email"
                   className="absolute left-3 top-2 text-gray-500 transition-all peer-placeholder-shown:top-2.5 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:top-[-1.2rem] peer-focus:text-sm peer-focus:text-blue-600"
                 >
-                  Email
+                  E-mail
                 </label>
               </div>
 
               <div className="relative mb-6">
                 <textarea
+                  name="message"
                   rows={4}
                   className="peer w-full rounded border-2 border-gray-500 bg-transparent px-3 py-2 leading-6 outline-none transition-all focus:border-blue-500"
                   id="message"
                   placeholder=" "
+                  required
                 />
                 <label
                   htmlFor="message"
                   className="absolute left-3 top-2 text-gray-500 transition-all peer-placeholder-shown:top-2.5 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:top-[-1.2rem] peer-focus:text-sm peer-focus:text-blue-600"
                 >
-                  Message
+                  Mensagem
                 </label>
               </div>
+
               <button
                 type="submit"
                 className="w-full rounded bg-blue-500 px-6 py-3 text-white transition hover:bg-blue-600"
               >
-                Send
+                Enviar
               </button>
+
+              {status === "success" && (
+                <p className="mt-4 text-green-600 font-semibold">
+                  Obrigado por enviar o formulário!
+                </p>
+              )}
+              {status === "error" && (
+                <p className="mt-4 text-red-600 font-semibold">
+                  Ocorreu um erro. Por favor, tente novamente.
+                </p>
+              )}
             </form>
 
             {/* Contact Info */}

@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react';
 import Navbar from './Navbar';
 import { Route } from "@/types/routes";
+import Image from 'next/image';
 
 type HeroProps = {
   title: string;
@@ -71,6 +72,22 @@ export default function Hero({
         >
           {description}
         </p>
+        <button className='transition-all duration-1000 ease-out transform delay-200 border-green-600 bg-green-500 rounded-xl hover:bg-green-600 text-xl'>
+          <a
+  href="https://wa.link/rpcx07"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="transition-all duration-1000 ease-out transform delay-200 border-2 border-green-600 bg-green-500 py-2 px-4 rounded-xl hover:bg-green-600 text-md inline-flex items-center gap-2"
+>
+  <Image
+    src="/whatsapp.svg"
+    alt="WhatsApp"
+    width={24}
+    height={24}
+  />
+  <span>Fale conosco</span>
+</a>
+        </button>
       </div>
     </section>
   );
