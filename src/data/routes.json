@@ -1,5 +1,6 @@
 [
     { "name": "Serviços", "path": "#servicos" },
+    { "name": "Galeria", "path": "#gallery"},
     { "name": "Sobre Nós", "path": "#about-us" },
     { "name": "Avaliações", "path": "#ratings"},
     { "name": "Contato", "path": "#contato" }
