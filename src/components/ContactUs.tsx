@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 type ContactItem = {
   title: string;
@@ -16,7 +16,6 @@ export default function ContactUs({ contacts }: ContactUsProps) {
     <section id="contato" className="mb-10 pt-10">
       <div className="container mx-auto px-6 md:px-12">
         <div className="flex flex-col lg:flex-row gap-8 rounded-lg border border-gray-300 bg-white/80 p-6 md:p-12 backdrop-blur-lg shadow-md">
-          
           {/* Mapa */}
           <div className="w-full lg:w-1/2 h-[300px] lg:h-auto">
             <iframe
@@ -36,13 +35,13 @@ export default function ContactUs({ contacts }: ContactUsProps) {
               <div className="relative mb-6">
                 <input
                   type="text"
-                  className="peer w-full rounded border-2 bg-transparent px-3 py-2 leading-6 outline-none transition-all focus:border-blue-500"
+                  className="peer w-full rounded border-2 border-gray-500 bg-transparent px-3 py-2 leading-6 outline-none transition-all focus:border-blue-500"
                   id="name"
                   placeholder=" "
                 />
                 <label
                   htmlFor="name"
-                  className="absolute left-3 top-2 text-gray-500 transition-all peer-placeholder-shown:top-2.5 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:top-[-0.7rem] peer-focus:text-sm peer-focus:text-blue-600"
+                  className="absolute left-3 top-2 text-gray-500 transition-all peer-placeholder-shown:top-2.5 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:top-[-1.2rem] peer-focus:text-sm peer-focus:text-blue-600"
                 >
                   Name
                 </label>
@@ -51,13 +50,13 @@ export default function ContactUs({ contacts }: ContactUsProps) {
               <div className="relative mb-6">
                 <input
                   type="email"
-                  className="peer w-full rounded border-2 bg-transparent px-3 py-2 leading-6 outline-none transition-all focus:border-blue-500"
+                  className="peer w-full rounded border-2 border-gray-500 bg-transparent px-3 py-2 leading-6 outline-none transition-all focus:border-blue-500"
                   id="email"
                   placeholder=" "
                 />
                 <label
                   htmlFor="email"
-                  className="absolute left-3 top-2 text-gray-500 transition-all peer-placeholder-shown:top-2.5 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:top-[-0.7rem] peer-focus:text-sm peer-focus:text-blue-600"
+                  className="absolute left-3 top-2 text-gray-500 transition-all peer-placeholder-shown:top-2.5 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:top-[-1.2rem] peer-focus:text-sm peer-focus:text-blue-600"
                 >
                   Email
                 </label>
@@ -66,30 +65,17 @@ export default function ContactUs({ contacts }: ContactUsProps) {
               <div className="relative mb-6">
                 <textarea
                   rows={4}
-                  className="peer w-full rounded border-2 bg-transparent px-3 py-2 leading-6 outline-none transition-all focus:border-blue-500"
+                  className="peer w-full rounded border-2 border-gray-500 bg-transparent px-3 py-2 leading-6 outline-none transition-all focus:border-blue-500"
                   id="message"
                   placeholder=" "
                 />
                 <label
                   htmlFor="message"
-                  className="absolute left-3 top-2 text-gray-500 transition-all peer-placeholder-shown:top-2.5 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:top-[-0.7rem] peer-focus:text-sm peer-focus:text-blue-600"
+                  className="absolute left-3 top-2 text-gray-500 transition-all peer-placeholder-shown:top-2.5 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:top-[-1.2rem] peer-focus:text-sm peer-focus:text-blue-600"
                 >
                   Message
                 </label>
               </div>
-
-              <div className="mb-6 flex items-center space-x-2">
-                <input
-                  type="checkbox"
-                  id="copy"
-                  className="h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500"
-                  defaultChecked
-                />
-                <label htmlFor="copy" className="text-sm text-gray-600">
-                  Send me a copy of this message
-                </label>
-              </div>
-
               <button
                 type="submit"
                 className="w-full rounded bg-blue-500 px-6 py-3 text-white transition hover:bg-blue-600"
@@ -125,9 +111,8 @@ export default function ContactUs({ contacts }: ContactUsProps) {
                     </div>
                     <div className="ml-4">
                       <p className="mb-1 font-bold">{contact.title}</p>
-                      <p className="text-sm text-gray-600">{contact.description}</p>
                       {contact.url && (
-                        <p className="text-sm text-blue-500">{contact.url}</p>
+                        <p className="text-sm text-gray-600">{contact.url}</p>
                       )}
                     </div>
                   </div>
@@ -135,7 +120,6 @@ export default function ContactUs({ contacts }: ContactUsProps) {
               ))}
             </div>
           </div>
-
         </div>
       </div>
     </section>

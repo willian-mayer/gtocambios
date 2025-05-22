@@ -31,16 +31,13 @@ export default function AboutUs({ title, description, imageUrl, rates }: AboutUs
   return (
     <section
       id="about-us"
-      className="lg:h-screen bg-white flex flex-col"
+      className=" bg-white flex flex-col"
     >
       {/* Parte superior */}
       <div className="flex-2 basis-2/3 grid lg:grid-cols-2 grid-cols-1 gap-8 items-center px-4 md:px-5 py-10 max-w-7xl mx-auto">
         <div className="flex flex-col gap-6 text-center lg:text-left items-center lg:items-start">
           <h2 className="text-gray-900 text-5xl font-bold">{title}</h2>
-          <p className="text-gray-500 text-lg leading-relaxed">{description}</p>
-          <button className="px-6 py-3 bg-green-600 hover:bg-green-800 transition-all duration-700 ease-in-out rounded-lg text-white shadow text-lg">
-            Whatsapp
-          </button>
+          <p className="text-gray-500 text-xl leading-relaxed">{description}</p>
         </div>
         <div className="w-full flex justify-center lg:justify-end">
   <Image
@@ -53,9 +50,8 @@ export default function AboutUs({ title, description, imageUrl, rates }: AboutUs
 </div>
       </div>
 
-      {/* Parte inferior: Carrusel */}
 {/* Parte inferior: Carrusel */}
-<div className="flex-1 basis-1/3 bg-black py-6 px-4 md:px-5">
+<div id="ratings" className="flex-1 basis-1/3 bg-black py-6 px-4 md:px-5">
   <div className="max-w-6xl mx-auto flex flex-col h-full justify-center gap-6">
     <h3 className="text-3xl font-bold text-center text-white">
       Avaliações de clientes
