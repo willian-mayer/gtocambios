@@ -9,6 +9,7 @@ import aboutUsData from "@/data/aboutus.json";
 import ContactUs from "@/components/ContactUs";
 import contactData from "@/data/contact.json";
 import Footer from "@/components/Footer";
+import ratesData from "@/data/rates.json"
 
 export default function Home() {
   return (
@@ -24,13 +25,14 @@ export default function Home() {
       <section className="snap-start py-12 bg-gray-100">
         <Carousel items={services} />
       </section>
-      <section className="snap-start">
-        <AboutUs
-          title={aboutUsData.title}
-          description={aboutUsData.description}
-          imageUrl={aboutUsData.imageUrl}
-        />
-      </section>
+    <section className="snap-start">
+      <AboutUs
+        title={aboutUsData.title}
+        description={aboutUsData.description}
+        imageUrl={aboutUsData.imageUrl}
+        rates={ratesData}
+      />
+    </section>
       <section className="snap-start">
 <ContactUs contacts={contactData.contacts} />
 

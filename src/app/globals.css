@@ -42,3 +42,13 @@ body {
 .custom-dot-list-style .react-multi-carousel-dot--active button {
   background: #000;
 }
+
+/* globals.css */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
