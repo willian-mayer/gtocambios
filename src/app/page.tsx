@@ -3,15 +3,17 @@ import Hero from "@/components/Hero";
 import heroData from "@/data/hero.json";
 import routesJson from "@/data/routes.json";
 import { Route } from "@/types/routes";
-import services from "@/data/services.json";
 import AboutUs from "@/components/AboutUs";
 import aboutUsData from "@/data/aboutus.json";
 import ContactUs from "@/components/ContactUs";
 import contactData from "@/data/contact.json";
 import Footer from "@/components/Footer";
 import ratesData from "@/data/rates.json"
+import scanners from '@/data/scanners.json';
+import oleo from '@/data/oleo.json';
 
 export default function Home() {
+    const equipmentGroups = [...scanners, ...oleo];
   return (
     <div className="h-screen overflow-y-scroll snap-y scroll-smooth">
       <section className="">
@@ -22,9 +24,9 @@ export default function Home() {
           routes={routesJson as Route[]}
         />
       </section>
-      <section className="py-12 bg-gray-100">
-        <Carousel items={services} />
-      </section>
+    <section className="py-12 bg-gray-100">
+      <Carousel data={equipmentGroups} />
+    </section>
     <section className="">
       <AboutUs
         title={aboutUsData.title}

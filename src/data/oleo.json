@@ -1,0 +1,15 @@
+[
+  {
+    "title": "Maquinas de troca de óleo de câmbio",
+    "equipamento": [
+      {
+        "name": "Tektino cm 102",
+        "imgUrl": "/products/5.jpeg"
+      },
+      {
+        "name": "Mahovi",
+        "imgUrl": "/products/4.jpeg"
+      }
+    ]
+  }
+]

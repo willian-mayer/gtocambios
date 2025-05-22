@@ -59,7 +59,7 @@ export default function AboutUs({ title, description, imageUrl, rates }: AboutUs
 
     <div className="relative w-full overflow-hidden">
       <div
-        className="flex transition-transform duration-500 ease-in-out"
+        className="flex content-center transition-transform duration-500 ease-in-out"
         style={{
           width: `${rates.length * 100}%`,
           transform: `translateX(-${(100 / rates.length) * currentIndex}%)`,
@@ -75,7 +75,7 @@ export default function AboutUs({ title, description, imageUrl, rates }: AboutUs
               ${index === currentIndex ? 'scale-100 opacity-100' : 'scale-90 opacity-50'}
             `}
           >
-            <div className="bg-white rounded-2xl shadow-lg p-6 max-w-md w-full text-center">
+            <div className="bg-white rounded-2xl shadow-lg p-6 max-w-md w-full text-center flex flex-col content-center">
               <p className="text-xl text-gray-700 mb-4">“{rate.description}”</p>
               <p className="text-lg italic text-gray-600 mb-2">– {rate.name}</p>
               <div className="flex justify-center text-yellow-500">

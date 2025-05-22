@@ -1,0 +1,19 @@
+[
+  {
+    "title": "Nossas máquinas de troca de óleo de câmbio",
+    "equipamento": [
+      {
+        "name": "Pdl 5600",
+        "imgUrl": "/products/1.jpeg"
+      },
+      {
+        "name": "Launch Pad 3",
+        "imgUrl": "/products/2.jpeg"
+      },
+      {
+        "name": "Autel MS908s3",
+        "imgUrl": "/products/3.jpeg"
+      }
+    ]
+  }
+]
