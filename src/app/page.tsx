@@ -11,6 +11,8 @@ import Footer from "@/components/Footer";
 import ratesData from "@/data/rates.json"
 import scanners from '@/data/scanners.json';
 import oleo from '@/data/oleo.json';
+import Gallery from "@/components/Gallery";
+import galleryData from '@/data/gallery.json';
 
 export default function Home() {
     const equipmentGroups = [...scanners, ...oleo];
@@ -27,6 +29,9 @@ export default function Home() {
     <section className="py-12 bg-gray-100">
       <Carousel data={equipmentGroups} />
     </section>
+    <section className="bg-gray-50">
+  <Gallery images={galleryData} />
+</section>
     <section className="">
       <AboutUs
         title={aboutUsData.title}

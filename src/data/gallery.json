@@ -1,0 +1,34 @@
+[
+  {
+    "id": 1,
+    "imgUrl": "/gallery/1.jpg"
+  },
+  {
+    "id": 2,
+    "imgUrl": "/gallery/2.jpg"
+  },
+  {
+    "id": 3,
+    "imgUrl": "/gallery/3.jpeg"
+  },
+  {
+    "id": 4,
+    "imgUrl": "/gallery/4.jpeg"
+  },
+  {
+    "id": 5,
+    "imgUrl": "/gallery/5.jpeg"
+  },
+  {
+    "id": 6,
+    "imgUrl": "/gallery/6.jpeg"
+  },
+  {
+    "id": 7,
+    "imgUrl": "/gallery/7.jpg"
+  },
+  {
+    "id": 9,
+    "imgUrl": "/gallery/9.jpg"
+  }
+]
