@@ -36,16 +36,7 @@ const Footer = ({ links }: FooterProps) => {
 
           {/* Enlaces + Redes Sociales */}
           <ul className="flex flex-col sm:flex-row flex-wrap items-start sm:items-center text-sm font-medium gap-2 sm:gap-4">
-            {links.map((link, idx) => (
-              <li key={idx}>
-                <a href={link.path} className="hover:underline">
-                  {link.name}
-                </a>
-              </li>
-            ))}
-
-            {/* Redes Sociales */}
-            {media.map((item, idx) => (
+                        {media.map((item, idx) => (
               <li key={`media-${idx}`}>
                 <a
                   href={item.url}
@@ -64,6 +55,16 @@ const Footer = ({ links }: FooterProps) => {
                 </a>
               </li>
             ))}
+            {links.map((link, idx) => (
+              <li key={idx}>
+                <a href={link.path} className="hover:underline">
+                  {link.name}
+                </a>
+              </li>
+            ))}
+
+            {/* Redes Sociales */}
+
           </ul>
         </div>
       </div>
