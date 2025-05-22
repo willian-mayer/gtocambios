@@ -13,8 +13,8 @@ import ratesData from "@/data/rates.json"
 
 export default function Home() {
   return (
-    <div className="h-screen overflow-y-scroll snap-y snap-mandatory scroll-smooth">
-      <section className="snap-start">
+    <div className="h-screen overflow-y-scroll snap-y scroll-smooth">
+      <section className="">
         <Hero
           title={heroData.title}
           description={heroData.description}
@@ -22,10 +22,10 @@ export default function Home() {
           routes={routesJson as Route[]}
         />
       </section>
-      <section className="snap-start py-12 bg-gray-100">
+      <section className="py-12 bg-gray-100">
         <Carousel items={services} />
       </section>
-    <section className="snap-start">
+    <section className="">
       <AboutUs
         title={aboutUsData.title}
         description={aboutUsData.description}
@@ -33,7 +33,7 @@ export default function Home() {
         rates={ratesData}
       />
     </section>
-      <section className="snap-start">
+      <section className="">
 <ContactUs contacts={contactData.contacts} />
 
         <Footer links={routesJson}/>
